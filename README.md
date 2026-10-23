@@ -44,9 +44,7 @@ Le jeu de données utilisé est le dataset e-commerce public **Olist** (commande
 
 <div align="center">
 
-![Architecture – vue en couches](docs/architecture_1_couches.png)
-
-![Architecture – flux médaillon](docs/architecture_2_flux_medaillon.png)
+![Architecture ](Architecture/Dashboard_As_Code.png)
 
 </div>
 
