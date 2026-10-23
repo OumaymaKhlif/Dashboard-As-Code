@@ -156,6 +156,4 @@ Le pipeline GitLab (`.gitlab-ci.yml`) déploie automatiquement les DAGs Airflow 
 
 ## 👤 Auteur
 
-**<Votre nom>**, projet réalisé lors d'un stage d'été en ingénierie des données.
-
-[LinkedIn](https://www.linkedin.com/in/<votre-profil>) · [GitHub](https://github.com/<votre-utilisateur>)
+**Oumayma Khlif** et **Saba Kallel** , projet réalisé lors d'un stage d'été en ingénierie des données.
