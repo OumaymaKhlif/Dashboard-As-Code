@@ -1,0 +1,12 @@
+data_platform:
+  target: dev
+  outputs:
+    dev:
+      type: trino
+      method: none
+      host: trino
+      user: airflow
+      port: 8080
+      database: postgres
+      schema: silver
+      threads: 4

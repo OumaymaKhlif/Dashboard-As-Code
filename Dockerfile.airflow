@@ -1,0 +1,14 @@
+FROM apache/airflow:3.3.0
+
+USER airflow
+RUN pip install --no-cache-dir \
+    pysmb \
+    boto3 \
+    paramiko \
+    requests \
+    smbprotocol \
+    trino \
+    setuptools \
+    "openmetadata-ingestion[trino,postgres,dbt,superset]==1.12.14" \
+    && pip install --no-cache-dir --force-reinstall --no-deps "sqlalchemy>=2.0,<2.1" \
+    && pip install --no-cache-dir --force-reinstall "setuptools<81"

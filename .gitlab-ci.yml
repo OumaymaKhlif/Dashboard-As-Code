@@ -1,0 +1,23 @@
+stages:
+  - test
+  - deploy
+
+test_connexion:
+  stage: test
+  script:
+    - echo "Runner opérationnel"
+
+deploy_dag:
+  stage: deploy
+  before_script:
+    - apk add --no-cache rsync openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H 10.110.188.126 >> ~/.ssh/known_hosts
+  script:
+    - rsync -avz airflow/dags/ dataops@10.110.188.126:/opt/data-platform-prod/airflow/dags/
+  #  - ssh dataops@10.110.188.126 "sleep 60 && docker exec airflow-api-server airflow dags trigger ingestion_bronze"
+  only:
+    - main
